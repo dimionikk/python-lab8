@@ -57,3 +57,22 @@ def student_3_add_answer(filename):
         print(f"ПОМИЛКА: Сталася неочікувана помилка: {e}")
 
 student_3_add_answer("python.txt")
+# Функція Бондаренко К.О.
+def Answers(filename):
+    try:
+        with open(filename, "a") as f:
+            f.write("\nБондаренко Костянтин\nВідповідь на запитання :\nСловник у Python — це структура даних, де інформація зберігається у вигляді пар «ключ: значення», і до даних звертаються через ключ, а не через індекс.")
+
+
+    except FileNotFoundError:
+        # Конкретна обробка: якщо файлу не існує
+        print(f"ПОМИЛКА: Файл '{filename}' не знайдено!")
+    except PermissionError:
+        # Конкретна обробка: якщо немає прав доступу
+        print(f"ПОМИЛКА: Немає доступу до файлу '{filename}'.")
+    except Exception as e:
+        # "Запасний" варіант для всіх інших помилок
+        print(f"ПОМИЛКА: Сталася неочікувана помилка: {e}")
+
+# Запис до файлу
+Answers("python.txt")
